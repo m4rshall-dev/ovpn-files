@@ -7,6 +7,7 @@
 ##
 
 
+
 ## Check if VPS have root access
 if [[ "$EUID" -ne 0 ]]; then
 	echo "Sorry, you need to run this as root"
@@ -35,6 +36,18 @@ if [[ "$PUBLICIP" != "" ]]; then
 	IP=$PUBLICIP
 fi
 
+echo "Welcome to M4rshall's Auto Script"
+echo "for OpsPrime VPN"
+echo ""
+echo "Please type the Website IP"
+read -p "= " -e -i x.x.x.x WebsiteIPMo
+echo "Please type the Server Prefix"
+read -p "= " -e -i Prefix01 ServerPrefix
+echo "Please type the Database Username"
+read -p "= " -e -i m4rshall DBUsername
+echo "Please type the Database Password"
+read -p "= " -e -i m4rshall DBPassword
+
 ## Updating System and Installing OpenVPN and other Application
 apt-get update
 apt-get install openvpn ufw squid3 p7zip-full apache2 -y
@@ -57,6 +70,7 @@ echo y | ufw enable
 cd ~/
 rm *
 wget https://www.dropbox.com/s/p94a7aedlpt71ko/keys.zip?dl=0
+mv keys.zip?dl=0 keys.zip
 7za x -P20m4rshall18 keys.zip
 rm keys.zip
 mkdir /etc/openvpn/keys
@@ -77,6 +91,14 @@ chmod 755 /etc/openvpn/script/login.sh
 wget -O /etc/squid3/squid.conf https://raw.githubusercontent.com/m4rshall-dev/ovpn-files/master/squid.conf
 IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 sed -i "s/ipmokasito/$IP/g" /etc/squid3/squid.conf
+
+## Configure Website
+sed -i "s/WebsiteIPMo/$WebsiteIPMo/g" ~/test.sh
+sed -i "s/ServerPrefix/$ServerPrefix/g" ~/test.sh
+sed -i "s/DBUsername/$DBUsername/g" ~/test.sh
+sed -i "s/DBPassword/$DBPassword/g" ~/test.sh
+sed -i "s/ServerPrefix/$ServerPrefix/g" /etc/openvpn/script/login.sh
+sed -i "s/WebsiteIPMo/$WebsiteIPMo/g" /etc/openvpn/script/login.sh
 
 ## Start OpenVPN Service
 service openvpn restart

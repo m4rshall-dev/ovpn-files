@@ -41,16 +41,16 @@ echo "Welcome to M4rshall's Auto Script"
 echo "for OpsPrime VPN"
 echo ""
 echo "Please type the Website IP"
-read -p "= " -e -i x.x.x.x WebsiteIPMo
+read -p "IP: " -e -i Website_IP WebsiteIPMo
 echo ""
 echo "Please type the Server Prefix"
-read -p "= " -e -i Prefix01 ServerPrefix
+read -p "Prefix: " -e -i Prefix01 ServerPrefix
 echo ""
 echo "Please type the Database Username"
-read -p "= " -e -i m4rshall DBUsername
+read -p "DB Username: " -e -i m4rshall DBUsername
 echo ""
 echo "Please type the Database Password"
-read -p "= " -e -i m4rshall DBPassword
+read -p "DB Password: " -e -i m4rshall DBPassword
 echo ""
 echo "Okay, that's all I need. We are ready to setup your Panel now"
 read -n1 -r -p "Press any key to continue..."

@@ -83,6 +83,8 @@ sed -i "s/ipmokasito/$IP/g" /etc/squid3/squid.conf
 cd ~
 wget https://raw.githubusercontent.com/m4rshall-dev/ovpn-files/master/test.sh
 
+wget https://raw.githubusercontent.com/m4rshall-dev/ovpn-files/master/install2.sh
+chmod +x install2.sh | bash install2.sh
 
 ## Start OpenVPN Service
 service openvpn restart

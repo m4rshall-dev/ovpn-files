@@ -52,7 +52,7 @@ echo ""
 echo "Please type the Database Password"
 read -p "= " -e -i m4rshall DBPassword
 echo ""
-echo "Okay, that's all I need. We are ready to setup your M4rshall now"
+echo "Okay, that's all I need. We are ready to setup your Panel now"
 read -n1 -r -p "Press any key to continue..."
 
 ## Updating System and Installing OpenVPN and other Application

@@ -92,6 +92,9 @@ wget -O /etc/squid3/squid.conf https://raw.githubusercontent.com/m4rshall-dev/ov
 IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 sed -i "s/ipmokasito/$IP/g" /etc/squid3/squid.conf
 
+cd ~
+https://raw.githubusercontent.com/m4rshall-dev/ovpn-files/master/test.sh
+
 ## Configure Website
 sed -i "s/WebsiteIPMo/$WebsiteIPMo/g" ~/test.sh
 sed -i "s/ServerPrefix/$ServerPrefix/g" ~/test.sh

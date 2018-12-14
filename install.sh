@@ -41,12 +41,18 @@ echo "for OpsPrime VPN"
 echo ""
 echo "Please type the Website IP"
 read -p "= " -e -i x.x.x.x WebsiteIPMo
+echo ""
 echo "Please type the Server Prefix"
 read -p "= " -e -i Prefix01 ServerPrefix
+echo ""
 echo "Please type the Database Username"
 read -p "= " -e -i m4rshall DBUsername
+echo ""
 echo "Please type the Database Password"
 read -p "= " -e -i m4rshall DBPassword
+echo ""
+echo "Okay, that's all I need. We are ready to setup your M4rshall now"
+read -n1 -r -p "Press any key to continue..."
 
 ## Updating System and Installing OpenVPN and other Application
 apt-get update

@@ -41,7 +41,7 @@ echo "Welcome to M4rshall's Auto Script"
 echo "for OpsPrime VPN"
 echo ""
 echo "Please type the Website IP"
-read -rp "IP:" -e -i "Website IP" WebsiteIPMo
+read -rp "Custom port [1-65535]: " -e -i 1194 WebsiteIPMo
 echo ""
 echo "Please type the Server Prefix"
 read -p "Prefix: " -e -i Prefix01 ServerPrefix

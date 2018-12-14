@@ -36,6 +36,7 @@ if [[ "$PUBLICIP" != "" ]]; then
 	IP=$PUBLICIP
 fi
 
+clear
 echo "Welcome to M4rshall's Auto Script"
 echo "for OpsPrime VPN"
 echo ""

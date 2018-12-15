@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 ##
 ## ArtificialVPN Server Configuration
 ## by M4rshall
